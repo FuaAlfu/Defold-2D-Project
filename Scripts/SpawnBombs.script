@@ -1,0 +1,17 @@
+function init(self)
+  math.randomseed(os.time())
+
+  local gameWidth = tonumber(sys.get_config("display.width"))
+  local gameHeigh = tonumber(sys.get_config("display.heigh"))
+
+  print("gameWidth: " ..tostring(gameWidth) .."gameHeigh: " .. tostring(gameHeigh))
+
+  for i=1 10 do
+	self.id = tostring(i)
+	local x1 = math.random(100, gameWidth - 100) 
+	local y1 = math.random(100, gameHeigh - 100) 
+	local pos = vmath.vector3(x1,y1,1) --position of spawn
+	factory.create("#factory", pos, nil, {}, 1)
+	print("spawning bomb: " ..self.id .." x1:" .. tostring(x1) .. " y1: " .. tostring(y1))
+  end
+end

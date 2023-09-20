@@ -1,0 +1,11 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.collision_id = nil
+	self.dragged_id = nil
+	self.self.dragged_pos = nil
+	self.pressed = false
+end
+
+function update(self,dt)
+	msg.post("@render", "clear_color",
+)
